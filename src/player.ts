@@ -32,5 +32,20 @@ export class Player {
   }
 
   spendResources(cost: Partial<Resources>): boolean {
+    // проверяем, хватает ли ресурсов
     for (const key in cost) {
-      const amount = cost
+      const amount = cost[key as keyof Resources] ?? 0;
+      if ((this.resources[key as keyof Resources] ?? 0) < amount) {
+        return false;
+      }
+    }
+    // списываем
+    for (const key in cost) {
+      this.resources[key as keyof Resources] -= cost[key as keyof Resources] ?? 0;
+    }
+    return true;
+  }
+
+  gainResources(gain: Partial<Resources>) {
+    for (const key in gain) {
+      this.resources[key as keyof Resources] += gain[key
