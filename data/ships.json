@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Fighter",
+    "cost": {"iron": 5, "copper": 3, "silicon": 2},
+    "hp": 10,
+    "damage": 4,
+    "range": 1
+  },
+  {
+    "name": "Raider",
+    "cost": {"iron": 8, "copper": 5, "silicon": 4},
+    "hp": 14,
+    "damage": 5,
+    "range": 5
+  },
+  {
+    "name": "Cruiser",
+    "cost": {"iron": 20, "copper": 12, "silicon": 8, "titanium": 5},
+    "hp": 30,
+    "damage": 12,
+    "range": 3
+  }
+]
